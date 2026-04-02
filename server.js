@@ -9,6 +9,8 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+const cors = require('cors');
+app.use(cors());
 
 // JWT Authentication Middleware
 function requireAuth(req, res, next) {
