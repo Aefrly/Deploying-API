@@ -67,6 +67,16 @@ app.get('/health', (req, res) => {
     });
 });
 
+// Status endpoint
+app.get('/api/status', (req, res) => {
+    res.json({
+        status: 'running',
+        environment: process.env.NODE_ENV,
+        nodeVersion: process.version,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Root endpoint
 app.get('/', (req, res) => {
     res.json({
